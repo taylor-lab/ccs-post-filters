@@ -9,5 +9,7 @@ Runs extra filters on Roslin 4.1 analysis mafs, to apply strand bias and mapping
 How to run:
 
 Rscript <....Step1.R>
+
 Rscript <....Step2.R>
+
 Rscript <....Step3.R>
