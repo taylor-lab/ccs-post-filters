@@ -30,7 +30,7 @@ batch_ccs_dir = '/ifs/res/taylorlab/chavans/roslin_2.4_deliveries/cs_deliveries'
 for(j in 1:B)
 {
   print(j)
-  if(j %ni% c(19,63,87,105,133))
+ # if(j %ni% c(19,63,87,105,133))
   {
   ##Load in the maf file(s) to get the batch id since we are looping by the batch ids 
   maf_file_base_name = str_match(amaf_files[j],"(Proj.*.muts.maf)")[,1]; 
@@ -49,7 +49,7 @@ for(j in 1:B)
   maf = maf %>% mutate(t_var_freq = t_alt_count/t_depth)
   
   vcfs = list.files(batch_out_dir,pattern="^MutectVcf_VardictOverlap*",full.names=TRUE)
-  if(is.na(vcfs) | is.null(vcfs))
+  if(length(vcfs) == 0)
   {
   #########################################################  SNVS
   
@@ -100,6 +100,7 @@ for(j in 1:B)
     system(cmd3_bsub)
     
   }))
+  }
   }
   }
 }
