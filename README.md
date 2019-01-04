@@ -10,6 +10,6 @@ How to run:
 
 Rscript <....Step1.R> #fillouts -- needs bams and analysis mafs
 
-Rscript <....Step2.R> #vcfs
+Rscript <....Step2.R> #vcfs -- needs sample mapping and vcfs
 
 Rscript <....Step3.R> #apply filters
