@@ -8,7 +8,7 @@ Runs extra filters on Roslin 4.1 analysis mafs, to apply strand bias and mapping
 
 How to run:
 
-Rscript <....Step1.R> #fillouts
+Rscript <....Step1.R> #fillouts -- needs bams and analysis mafs
 
 Rscript <....Step2.R> #vcfs
 
