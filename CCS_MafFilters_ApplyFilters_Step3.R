@@ -310,7 +310,7 @@ for(j in 1:B)
         mutect_only$Ntag = paste(mutect_only$Matched_Norm_Sample_Barcode,mutect_only$Chromosome,mutect_only$Start_Position,mutect_only$Reference_Allele,mutect_only$Tumor_Seq_Allele2,sep=";")
         mutect_only = merge(mutect_only,Nfill[,c(33,34,38:42,44:48)],by="Ntag",all.x=TRUE)
         mutect_only$normreads = ifelse(mutect_only$Nfill_altcount > 3,"remove","ok")
-        mutect_only$removefinal = ifelse(mutect_only$Nfill_altcount > 3,"remove","ok")
+        mutect_only$removefinal = ifelse(mutect_only$hotspot_whitelist=="TRUE","ok",ifelse(mutect_only$Nfill_altcount > 3,"remove","ok"))
         write.table(mutect_only,paste0(batch_out_dir,"/",batchid,"_FullFinalMaf_Mutect_Only.txt"),quote=FALSE,sep="\t",row.names=FALSE)
         print(table(maf5$mutres,maf5$strandfilt2))
 
