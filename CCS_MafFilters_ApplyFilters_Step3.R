@@ -299,7 +299,7 @@ for(j in 1:B)
                                                                                     ifelse(is.na(maf5$Tfill_forMAF),"remove",
                                                                                            ifelse(maf5$Tfill_forMAF==0,"remove","ok"))))))))),"ok")
 
-        #write.table(maf5,paste0(batch_out_dir,"/",batchid,"_FullFinalMaf.txt"),quote=FALSE,sep="\t",row.names=FALSE)
+        write.table(maf5,paste0(batch_out_dir,"/",batchid,"_FullFinalMaf.txt"),quote=FALSE,sep="\t",row.names=FALSE)
         table(maf5$refbiasfix, maf5$strandtog)
         maf5 = maf5 %>% mutate(var_alli = str_c(Tumor_Sample_Barcode,';',Chromosome,';',Start_Position),
                                              var_tag = str_c(Tumor_Sample_Barcode,':',Chromosome,':',Start_Position,':',End_Position,':',Reference_Allele,':',Tumor_Seq_Allele2))
