@@ -66,7 +66,7 @@ for(j in 1:B)
           if(is.na(file)){print(paste0("!!!VCF not found for ",x))}
           mafsearch = paste(unique(maf$Start_Position[maf$Tumor_Sample_Barcode==x]),collapse=" -e ")
         
-          cmd = paste0("'grep -e ",mafsearch," ",file," > ",batch_out_dir,"/","VardictVcf_",x,".txt'")
+          cmd = paste0("'grep -e ",mafsearch," ",file," > ",batch_out_dir,"/","VardictVcf_snvs_",x,".txt'")
           cmd_bsub = paste("bsub -e",batch_out_dir,"-n 1 -R rusage[mem=10] -We 1:57",cmd)
           write.table(cmd,paste0(batch_out_dir,"/",batchid,".sh"),quote=FALSE,row.names = FALSE,sep="\t",append=FALSE)
           write.table(cmd_bsub,paste0(batch_out_dir,"/",batchid,".bsub.sh"),quote=FALSE,row.names = FALSE,sep="\t",append=FALSE)
