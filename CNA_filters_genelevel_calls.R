@@ -123,8 +123,6 @@ for(j in 1:1)
   write.table(homdeltsg_review,paste0(batch_out_dir,"/",batchid,"_ccs_homdeltsg_review_candidates.txt"),row.names=FALSE,quote=FALSE,sep="\t")
 
 }
-
-## Compare with IMPACT
   
   
   
