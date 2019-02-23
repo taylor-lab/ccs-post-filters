@@ -60,7 +60,7 @@ for(j in 1:B)
         print(dim(distinct(maf)))
         #########################################################  SNVS
         ##Read in the subsetted vcfs for all samples
-        vcffiles <- list.files(path=batch_out_dir,pattern="^VardictVcf_s")
+        vcffiles <- list.files(path=batch_out_dir,pattern="^VardictVcf_snvs_")
         loadandmerge <- function(text) {
           x <- strsplit(text,split="_")
           name <- paste(x[[1]][2],x[[1]][3],x[[1]][4],x[[1]][5],x[[1]][6],sep="_")
@@ -90,7 +90,7 @@ for(j in 1:B)
         #########################################################  DELETIONS
         
         ##Load these new vcfs for deletions back in
-        vcffiles3 <- list.files(path=batch_out_dir,pattern="^VardictVcf_deletions")
+        vcffiles3 <- list.files(path=batch_out_dir,pattern="^VardictVcf_deletions_")
         loadandmerge3 <- function(text) {
           x <- strsplit(text,split="_")
           name <- paste(x[[1]][3],x[[1]][4],x[[1]][5],x[[1]][6],x[[1]][7],sep="_")
